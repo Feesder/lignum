@@ -1,0 +1,23 @@
+<header id="header" class="fixed-top ">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+    <div  class="logo-holder">
+      <a href="/"><img src="assets/img/apple-touch-icon.png" alt="LIGNUM" class="logo-img"></a>
+    </div>
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto <% if (active === 'main') { %> active <% } %>" href="/">Главная</a></li>
+        <li><a class="nav-link scrollto <% if (active === 'wiki') { %> active <% } %>" href="/wiki">Гайды</a></li>
+        <li><a class="nav-link scrollto <% if (active === 'map') { %> active <% } %>" href="/map">Карта</a></li>
+        <li><a class="nav-link scrollto" href="/#helper">Частые вопросы</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    <div class="avatar-block">
+      <% if (user.minecraft_id) { %> 
+        <img class="avatar" src="https://minotar.net/avatar/<%= user.minecraft_id %>">
+      <% } else { %>
+      <a href="/play" class="get-started-btn scrollto">ИГРАТЬ</a>
+      <% } %> 
+    </div> 
+  </div>
+</header>

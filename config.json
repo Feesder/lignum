@@ -1,0 +1,8 @@
+{
+    "port": 3000,
+    "clientId": "1123657701239570503",
+    "clientSecret": "f718IK_Mo_JyEi4SS9SEuEhR5uOJJyBz",
+    "database": {
+        "url": "mongodb+srv://boyapcky:RX2cBcDwPIc4nHJn@cluster0.qouqc1o.mongodb.net/?retryWrites=true&w=majority"
+    }
+}

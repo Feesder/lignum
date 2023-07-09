@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      
+        <title>LIGNUM PLAY</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+      
+        <!-- CSS стороние css скрипт файлы -->
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+      
+       <script src="assets/vendor/aos/aos.js"></script>
+       <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+       <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+       <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        
+       <link href="assets/css/WIKI.css" rel="stylesheet">
+        <!-- Главный css файл -->
+        <link href="assets/css/style.css" rel="stylesheet">
+      
+      </head>
+<body>
+    <script src="https://unpkg.com/vue@next"></script>
+    <%- include('./partial/header') %>
+    
+    <div class="play">
+        <div class="container" :class="{'d-none': auth}">
+            <form class="play-wrapper play-border" @submit.prevent="onSubmit">
+                <a class="discord-link play-border" href="https://discord.gg/4HxQXHwu8f">
+                    <div class="link-block">
+                        <img class="link" src="assets/img/link.png">
+                        <img src="assets/img/discord.png">
+                    </div>
+                </a>
+                <div>
+                    <input class="play-border play-input" type="text" v-model="nickname">
+                </div>
+                <div class="play-error" v-if="error > 0 && error < 3">
+                    <div v-if="error === 1">
+                        <p>Ник должен состоять от 3 до 16 букв</p>
+                    </div>
+                    <div v-else-if="error === 2">
+                        <p>Ник не должен содержать специальных символов</p>
+                    </div>
+                    <img src="assets/img/error.png">
+                </div>
+                <button class="play-button" type="submit">ПОЛУЧИТЬ ДОСТУП</button>
+                <div class="play-error" v-if="error >= 3">
+                    <div v-if="error === 3">
+                        <p>Игрок с таким ником не существует</p>
+                    </div>
+                    <div v-else-if="error === 4">
+                        <p>Игрок с таким ником уже зарегистрирован</p>
+                    </div>
+                    <div v-else-if="error === 5">
+                        <p>Ошибка с сервером</p>
+                    </div>
+                    <div v-else-if="error === 6">
+                        <p>Вас нет в дискорд сервере</p>
+                    </div>
+                    <img src="assets/img/error.png">
+                </div>
+            </from>
+        </div>
+        <div :class="{'d-none': !auth}" class="position-absolute top-50 start-50 translate-middle">
+            <div class="play-wrapper play-border">
+                <div class="Xyeta">          
+                    <div class="alertt" id="successMessage">  IP скопирован </div>
+                    <input type="text" id="clickboardInput" value=" 1s.lignum.su" class="copyip" readonly=""> 
+                       <div class="copy"><i class="ri-file-copy-line"></i>
+                    </div> 
+              </div>
+                <button @click="transition" class="play-button" type="submit">ПЕРЕЙТИ НА ГЛАВНУЮ СТРАНИЦУ</button>
+            </div>
+        </div>
+    </div>
+    <script src="/main.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
