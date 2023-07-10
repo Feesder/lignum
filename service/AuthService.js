@@ -14,7 +14,7 @@ class AuthService {
                         client_secret: config.clientSecret,
                         code,
                         grant_type: 'authorization_code',
-                        redirect_uri: `http://localhost:${config.port}/auth`,
+                        redirect_uri: config.redirect_uri,
                         scope: 'identify'
                     }).toString(),
                     headers: {
