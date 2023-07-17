@@ -1,4 +1,5 @@
 import UserService from "../service/UserService.js"
+import config from '../config.json' assert { type: 'json' }
 
 class AppController {
     async main(req, res) {
@@ -39,7 +40,7 @@ class AppController {
             const userId = req.cookies.userId
 
             if (!userId) {
-                res.redirect('https://discord.com/api/oauth2/authorize?client_id=1123657701239570503&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth&response_type=code&scope=identify')
+                res.redirect(config.generate_url)
                 return
             }
 

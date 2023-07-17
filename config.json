@@ -3,6 +3,7 @@
     "clientId": "1123657701239570503",
     "clientSecret": "f718IK_Mo_JyEi4SS9SEuEhR5uOJJyBz",
     "redirect_uri": "http://localhost:3000/auth",
+    "generate_url": "https://discord.com/api/oauth2/authorize?client_id=1123657701239570503&redirect_uri=https%3A%2F%2Flignum.su%2Fauth&response_type=code&scope=identify",
     "database": {
         "url": "mongodb+srv://boyapcky:RX2cBcDwPIc4nHJn@cluster0.qouqc1o.mongodb.net/?retryWrites=true&w=majority"
     }
