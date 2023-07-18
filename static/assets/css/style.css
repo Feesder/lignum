@@ -17,7 +17,6 @@ a:hover {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
@@ -167,6 +166,7 @@ h6 {
     padding: 7px 20px 8px 20px;
     left: 65%;
     position: fixed;
+    top: 26px;
   }
 }
 
@@ -275,7 +275,6 @@ h6 {
 
 .avatar-block {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
   flex: 1;
 }
@@ -2143,7 +2142,7 @@ section.faq {
 }
 
 .get-started-btn {
-  left: 65%;
+  left: 63%;
 }
 
 .mobile-nav-toggle {
@@ -2381,3 +2380,28 @@ section.faq {
   width: 50px;
   border-radius: 5px;
 }
+
+
+
+@media screen and (max-width: 991px) and (min-width: 913px) {
+
+.knopka1 {
+  left: 60%;
+}
+
+.knopka2 {
+  left: 18%;
+}
+
+}
+
+
+
+
+@media screen and (max-width: 718px) and (min-width: 54px) {
+
+  .features .image {
+    display: none;
+  }
+  
+  }
