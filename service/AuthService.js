@@ -52,15 +52,16 @@ class AuthService {
         try {
             const response = await request(`https://api.mojang.com/users/profiles/minecraft/${name}`)
             const player =  await response.body.json()
-            const user = await User.find({ minecraft_id: player.id })
-            if (!user[0]) {
+            const user = await User.findOne({ minecraft_id: player.id })
+            if (!user) {
                 return player
             }
         } catch(e) {
             console.log(e)
+            return { message: 'Игрок с таким ником уже зарегистрирован' }
         }
 
-        return { message: 'Игрок с таким ником уже зарегистрирован' }
+        return player
     }
 
     async update(user) {

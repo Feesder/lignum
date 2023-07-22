@@ -2381,6 +2381,11 @@ section.faq {
   border-radius: 5px;
 }
 
+.play-check-mark {
+  width: 100px;
+  height: 100px;
+}
+
 
 
 @media screen and (max-width: 991px) and (min-width: 913px) {

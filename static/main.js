@@ -33,6 +33,7 @@ const App = {
                 return response.json()
             })
 
+            console.log(player)
             if (player.errorMessage) {
                 this.error = 3
                 return
@@ -58,6 +59,9 @@ const App = {
 
             if (response.ok) {
                 this.auth = true
+                setTimeout(() => {
+                    window.location.href = '/'
+                }, 1500)
             } else {
                 this.error = 5
             }

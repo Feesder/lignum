@@ -39,12 +39,7 @@
     <div class="play">
         <div class="container" :class="{'d-none': auth}">
             <form class="play-wrapper play-border" @submit.prevent="onSubmit">
-                <a class="discord-link play-border" href="https://discord.gg/4HxQXHwu8f">
-                    <div class="link-block">
-                        <img class="link" src="assets/img/link.png">
-                        <img src="assets/img/discord.png">
-                    </div>
-                </a>
+                <iframe src="https://discord.com/widget?id=1059459911408427058&theme=dark" width="100%" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                 <div>
                     <input class="play-border play-input" type="text" v-model="nickname">
                 </div>
@@ -76,15 +71,7 @@
             </from>
         </div>
         <div :class="{'d-none': !auth}" class="position-absolute top-50 start-50 translate-middle">
-            <div class="play-wrapper play-border">
-                <div class="Xyeta">          
-                    <div class="alertt" id="successMessage">  IP скопирован </div>
-                    <input type="text" id="clickboardInput" value=" 1s.lignum.su" class="copyip" readonly=""> 
-                       <div class="copy"><i class="ri-file-copy-line"></i>
-                    </div> 
-              </div>
-                <button @click="transition" class="play-button" type="submit">ПЕРЕЙТИ НА ГЛАВНУЮ СТРАНИЦУ</button>
-            </div>
+            <img class="play-check-mark" src="assets/img/check-mark.png">
         </div>
     </div>
     <script src="/main.js"></script>
