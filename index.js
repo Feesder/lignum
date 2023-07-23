@@ -11,13 +11,14 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import { Server } from 'socket.io'
 import http from 'http'
+import Rcon from 'rcon'
 import config from './config.json' assert { type: 'json' }
 
 const PORT = process.env.PORT ?? 3000
 const app = express()
 const server = http.createServer(app)
 const io = new Server(server) 
-
+const rcon = new Rcon(config.rcon.server_ip, config.rcon.server_port, config.rcon.rcon_password, { tcp: true, challenge: false})
 app.set('view engine', 'ejs')
 
 app.use(express.static(path.resolve(path.resolve(), 'static')))
@@ -32,7 +33,7 @@ app.use('/', AppRouter)
 app.use('/api', UserRouter)
 app.use('/auth', AuthRouter)
 
-export default io
+export { io, rcon }
 
 server.listen(3000, async () => {
     try {

@@ -1,7 +1,7 @@
 import config from '../config.json' assert { type: 'json' }
 import { request } from 'undici'
 import User from '../dto/user.js'
-import io from '../index.js'
+import { io, rcon } from '../index.js'
 
 class AuthService {
     async auth(code) {
@@ -30,8 +30,8 @@ class AuthService {
                 })
                 const response = await data.body.json()
 
-                const user = await User.find({ discord_id: response.id })
-                if (!user[0]) {
+                const user = await User.findOne({ discord_id: response.id })
+                if (!user) {
                     const user = {
                         discord_id: response.id,
                         username: response.username
@@ -39,7 +39,7 @@ class AuthService {
                     return await User.create(user)
                 }
 
-                return user[0]
+                return user
             } catch(e) {
                 console.log(e)
             }
@@ -52,21 +52,28 @@ class AuthService {
         try {
             const response = await request(`https://api.mojang.com/users/profiles/minecraft/${name}`)
             const player =  await response.body.json()
-            const user = await User.findOne({ minecraft_id: player.id })
-            if (!user) {
+            if (!player.id) {
                 return player
             }
+            const user = await User.findOne({ minecraft_id: player.id })
+            console.log(player)
+            console.log(user)
+            if (user) {
+                return { message: 'Игрок с таким ником уже зарегистрирован' }
+            }
+            return player
         } catch(e) {
             console.log(e)
             return { message: 'Игрок с таким ником уже зарегистрирован' }
         }
-
-        return player
     }
 
     async update(user) {
+        await rcon.connect()
         const newUser = await User.findByIdAndUpdate(user._id, user, { new: true }) 
         io.emit('player', newUser)
+        await rcon.send(`whitelist add ${newUser.username}`)
+        rcon.disconnect()
         return newUser
     }
 }

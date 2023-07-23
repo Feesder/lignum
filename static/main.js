@@ -44,6 +44,8 @@ const App = {
                 return
             }
 
+            console.log(player)
+
             const response = await fetch('/auth', {
                 method: 'PUT',
                 body: new URLSearchParams({
