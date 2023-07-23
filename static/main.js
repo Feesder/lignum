@@ -1,4 +1,4 @@
-const specialCharacters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/
+const specialCharacters = /[!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?]+/
 
 function getCookie(name) {
     const cookies = document.cookie.split('; ')
