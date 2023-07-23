@@ -30,6 +30,10 @@
        <link href="assets/css/WIKI.css" rel="stylesheet">
         <!-- Главный css файл -->
         <link href="assets/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/assets/vendor/Discord-Invite/discordInvite.css"/>
+        <link rel="stylesheet" href="/path/to/discordInvite.css"/>
+       
+
       
       </head>
 <body>
@@ -39,10 +43,21 @@
     <div class="play">
         <div class="container" :class="{'d-none': auth}">
             <form class="play-wrapper play-border" @submit.prevent="onSubmit">
-                <iframe src="https://discord.com/widget?id=1059459911408427058&theme=dark" width="100%" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                <div>
-                    <input class="play-border play-input" type="text" v-model="nickname">
+            <div class="registracia1">
+                <h1 class="osnovareg" >Шаг 1. Авторизация в дискорде </h1>
+                <h2 class="Helperrr">Ваш аккаунт майнкрафта будет синхранизирован с вашим дискорд аккаунтом на нашем сервере.</a></h2>
+                <iframe src="https://discord.com/widget?id=1059459911408427058&theme=dark" width="100%" border-radius="20px" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" style="border-radius: 20px; margin-top: 15px"  ></iframe>
+            </div>
+
+            <div class="registracia1">
+                <h1 class = "osnovareg" >Шаг 2. Введите ник </h1>
+                <h2 class="Helperrr">Введите никнейм вашей лицензированной учетной записи.</a></h2>
+            </div>
+
+                <div class="nickname1">
+                    <input class="play-border play-input" type="text" placeholder="Введите никнейм" v-model="nickname">
                 </div>
+
                 <div class="play-error" v-if="error > 0 && error < 3">
                     <div v-if="error === 1">
                         <p>Ник должен состоять от 3 до 16 букв</p>
@@ -52,7 +67,7 @@
                     </div>
                     <img src="assets/img/error.png">
                 </div>
-                <button class="play-button" type="submit">ПОЛУЧИТЬ ДОСТУП</button>
+                <button class="play-button" type="submit">Авторизация</button>
                 <div class="play-error" v-if="error >= 3">
                     <div v-if="error === 3">
                         <p>Игрок с таким ником не существует</p>
@@ -76,5 +91,6 @@
     </div>
     <script src="/main.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="/static/assets/vendor/Discord-Invite/discordInvite.js"></script>
 </body>
 </html>

@@ -56,8 +56,6 @@ class AuthService {
                 return player
             }
             const user = await User.findOne({ minecraft_id: player.id })
-            console.log(player)
-            console.log(user)
             if (user) {
                 return { message: 'Игрок с таким ником уже зарегистрирован' }
             }

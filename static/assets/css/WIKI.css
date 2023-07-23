@@ -290,6 +290,17 @@ section {
   font-weight: 800;
 }
 
+.osnovareg {
+  font-size: 30px;
+  color: #ffffff;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  font-weight: 600;
+  padding: 0px 0px 15px 0px;
+}
+
+
 .PRAVILAOSNOVA {
   text-align: left;
 }
@@ -481,7 +492,6 @@ section {
     margin-block-start: 5px;
     padding: 18px;
     margin: 20px 0px 0px 0px;
-
 }
 
 
@@ -1313,10 +1323,36 @@ transition: opacity 0.2s ease-out;
   padding: 0px;
 }
 
+.Helperrr {
+  border: 1px solid #3c3c3c;
+  width: auto;
+  border-radius: 20px;
+  width: -webkit-fill-available;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+}
 
 
+.Helperrr1 {
+  border: 1px solid #f00;
+  width: auto;
+  border-radius: 20px;
+  width: -webkit-fill-available;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  background-color: #dd0f0f36;
+  margin-top: -18px;
+}
 
 
+.nickname1 {
+  padding: 0px 0px 6px 0px;
+  margin-top: -10px;
+}
 
 
 
